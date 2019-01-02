@@ -82,7 +82,7 @@ int main(void){
 				break;
 			}
 
-			randmove = genRandomMove(T,9,2);
+			randmove = genRandomMove(T,9);
 			if (T[randmove] == 0){
 				T[randmove] = 2;
 				break;
