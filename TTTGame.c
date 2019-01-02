@@ -13,13 +13,33 @@ int main(void){
 
 	T = genBoard();
 
-	while(1){
+	while (1){
 
 		/*Player "X" (user)*/
 
 		printf("%d\n", printBoard(T,9));
-		printf("X move?\n");
-		scanf("%d", &Xmove);
+		printf("Player X, where would you like to play?\n");
+		
+		/*take in user input, check if the indicated slot is valid*/
+		
+		while (1){
+
+			scanf("%d", &Xmove);
+
+			if ((Xmove >= 0) && (Xmove <= 8)){
+				if (T[Xmove] == 0){
+					break;
+				}
+				else{
+					printf("Invalid entry: The slot is already taken.\n");
+					printf("Please enter a new number:\n");
+				}
+			}
+			else{
+				printf("Invalid entry: The number you entered is out of range.\n");
+				printf("Please enter a valid number from 0 to 8:\n");
+			}
+		}
 
 		/*place X in the indicated slot*/
 
@@ -50,7 +70,7 @@ int main(void){
 
 		/*place O in the best spot as analyzed by the simulation functions*/
 
-		while(1){
+		while (1){
 
 			winmove = genWinningMove(T,9,2);
 			if (winmove != -1){
