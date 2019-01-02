@@ -9,8 +9,8 @@ int opponent(int player);
 int *copyList(int *T, int size);
 int genWinningMove(int *T, int size, int player);
 int genNonLosingMove(int *T, int size, int player);
-int genOpenMove(int *T, int size, int player);
-int genRandomMove(int *T, int size, int player);
+int genOpenMove(int *T, int size);
+int genRandomMove(int *T, int size);
 
 
 int errorCheck(int *T, int size){
@@ -224,7 +224,7 @@ int genNonLosingMove(int *T, int size, int player){
 	return genWinningMove(T,size,opponent(player));
 }
 
-int genOpenMove(int *T, int size, int player){
+int genOpenMove(int *T, int size){
 
 	/*check for errors*/
 
@@ -246,7 +246,7 @@ int genOpenMove(int *T, int size, int player){
 	return -1;
 }
 
-int genRandomMove(int *T, int size, int player){
+int genRandomMove(int *T, int size){
 
 	/*check for errors*/
 
@@ -280,6 +280,6 @@ int genRandomMove(int *T, int size, int player){
 		return randmove;
 	}
 	else{
-		return genRandomMove(T,size,player);
+		return genRandomMove(T,size);
 	}
 }
