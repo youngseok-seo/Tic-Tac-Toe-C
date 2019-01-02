@@ -43,9 +43,7 @@ int main(void){
 
 		/*place X in the indicated slot*/
 
-		if (T[Xmove] == 0){
-			T[Xmove] = 1;
-		}
+		T[Xmove] = 1;
 
 		/*analyze the game state after X move*/
 
